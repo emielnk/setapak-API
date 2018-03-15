@@ -1,10 +1,10 @@
 var config = {
     database: {
-        host:      'localhost',     // database host
-        user:       'root',         // your database username
-        password: '',         // your database password
-        port:       3306,         // default MySQL port
-        db:       'setapak'         // your database name
+        host:      '127.0.0.1',     // database host
+        user:      'root',         // your database username
+        password:  '',         // your database password
+        port:      3306,         // default MySQL port
+        db:        'setapak'         // your database name
     },
     server: {
         host: '127.0.0.1',
@@ -12,4 +12,4 @@ var config = {
     }
 }
  
-module.exports = config
+    module.exports = config
