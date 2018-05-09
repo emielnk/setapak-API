@@ -1,8 +1,10 @@
-var userController = {}
+var wisatawanController = {}
+var authController = require("./authControllers")
 
-userController.getUser = (req, res) => {
+
+wisatawanController.getUser = (req, res) => {
     req.getConnection(function(err,connection){
-        connection.query('SELECT * FROM user',function(err,rows){
+        connection.query('SELECT * FROM wisatawan',function(err,rows){
            if(err)
               console.log("Error Selecting : %s ", err);
            else {
@@ -20,9 +22,9 @@ userController.getUser = (req, res) => {
     });
 }
 
-userController.getUserById = (req, res) => {
+wisatawanController.getUserById = (req, res) => {
     var a = req.params.id
-    var query = 'SELECT * FROM user WHERE id_wisatawan = ?'
+    var query = 'SELECT * FROM wisatawan WHERE id_wisatawan = ?'
     req.getConnection(function (err, conn) {
         conn.query(query, a, function (err, rows) {
             res.json(rows)
@@ -30,4 +32,8 @@ userController.getUserById = (req, res) => {
     })
 }
 
-module.exports = userController;
+wisatawanController.getCurrentUserId = () => {
+    return authController.getAuthId
+}
+
+module.exports = wisatawanController;

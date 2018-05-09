@@ -2,11 +2,11 @@ var config = require('../config')
 var router = require('express').Router()
 // var expres = require('express')
 
-var userControllers = require('../controllers/userControllers')
+var wisatawanControllers = require('../controllers/wisatawanControllers')
 
 var APIRoutes = function () {
-    router.get('/users', userControllers.getUser);
-    router.get('/users/:id', userControllers.getUserById)
+    router.get('/users', wisatawanControllers.getUser);
+    router.get('/users/:id', wisatawanControllers.getUserById)
     return router;
 };
 
